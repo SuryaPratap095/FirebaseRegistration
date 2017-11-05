@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "256093128927",
+    "firebase_url": "https://fir-registration-82dd7.firebaseio.com",
+    "project_id": "fir-registration-82dd7",
+    "storage_bucket": "fir-registration-82dd7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256093128927:android:ac0464e8d2178a99",
+        "android_client_info": {
+          "package_name": "com.example.suryasolanki.firebaseregistration"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "256093128927-4q5onduh8e5c9i81rofchcu40r139k6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPRUA1swnA9HD3PG1UJjxLuBfBLt-sEdM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
