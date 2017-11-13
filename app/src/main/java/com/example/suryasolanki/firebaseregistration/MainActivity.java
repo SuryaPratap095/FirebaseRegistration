@@ -100,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                                 finish();
                                 startActivity(new Intent(getApplicationContext(), StartActivity.class));
                                 Log.d("FirebaseAuth", "onComplete" + task.getException().getMessage());
+                                Toast.makeText(getApplicationContext(), "Registration Success", Toast.LENGTH_SHORT).show();
                             } else {
                                 Toast.makeText(getApplicationContext(), "Registration Fail", Toast.LENGTH_SHORT).show();
                             }
