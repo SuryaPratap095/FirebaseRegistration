@@ -1,5 +1,6 @@
 package com.example.suryasolanki.firebaseregistration;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.w3c.dom.Text;
 
@@ -48,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
         editTextEmail=(EditText)findViewById(R.id.editTextEmail);
         editTextPassword=(EditText) findViewById(R.id.editTextPassword);
 
-        progressBar=new ProgressBar(this);
-
+        progressBar=(ProgressBar) findViewById(R.id.progressBar_cyclic);
+        progressBar.setVisibility(View.GONE);
         buttonSignUp=(Button)findViewById(R.id.buttonSignup);
 
         ViewTextSignIn=(TextView)findViewById(R.id.textViewSignin);
@@ -90,7 +92,8 @@ public class MainActivity extends AppCompatActivity {
 
         try {
 
-
+              progressBar.setVisibility(View.VISIBLE);
+           // FirebaseAuth firebaseAuth1=FirebaseAuth.getInstance();
             firebaseAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 
@@ -102,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                                 Log.d("FirebaseAuth", "onComplete" + task.getException().getMessage());
                                 Toast.makeText(getApplicationContext(), "Registration Success", Toast.LENGTH_SHORT).show();
                             } else {
+                                progressBar.setVisibility(View.GONE);
                                 Toast.makeText(getApplicationContext(), "Registration Fail", Toast.LENGTH_SHORT).show();
                             }
                         }
